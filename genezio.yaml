@@ -22,9 +22,7 @@ backend:
     - name: hello-world-fastify-app-function
       # The path to the function's code.
       path: ./
-      # The name of the function handler
-      handler: handler
       # The entry point for the function.
       entry: app.mjs
       # The compatibility of the function handler.
-      type: aws
+      type: httpServer

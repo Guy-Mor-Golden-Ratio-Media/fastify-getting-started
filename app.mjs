@@ -1,27 +1,19 @@
-import Fastify from 'fastify';
-import serverless from "serverless-http";
+import Fastify from "fastify";
 
 const app = Fastify();
 
-app.get('/', (request, reply) => {
-  reply.send('Hello World from Fastify!');
+app.get("/", (request, reply) => {
+  reply.send("Hello World from Fastify!");
 });
 
-app.get('/users', (request, reply) => {
+app.get("/users", (request, reply) => {
   reply.send([
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
   ]);
 });
 
+app.listen({
+  port: 3000,
+});
 
-if (process.env.NODE_ENV === "dev") {
-  app.listen(8080, () => {
-    console.log(
-      "Server is running on port 8080. Check the app on http://localhost:8080"
-    );
-  });
-}
-
-
-export const handler = serverless(app);
