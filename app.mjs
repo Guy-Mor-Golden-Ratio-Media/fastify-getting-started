@@ -3,7 +3,7 @@ import Fastify from "fastify";
 const app = Fastify();
 
 app.get("/", (request, reply) => {
-  reply.send("Hello World from Fastify!");
+  reply.send("Hello Guy, from Fastify!");
 });
 
 app.get("/users", (request, reply) => {
